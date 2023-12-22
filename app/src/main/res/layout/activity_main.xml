@@ -49,11 +49,14 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="Name"
+                android:id="@+id/nameEditText"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start"
