@@ -1,2 +1,2 @@
-# QuizApp
+# KwizApp
 Basic QuizApp
