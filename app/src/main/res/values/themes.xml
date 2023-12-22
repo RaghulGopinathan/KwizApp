@@ -5,5 +5,9 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.KwizApp" parent="Base.Theme.KwizApp" />
+    <style name="Theme.KwizApp" parent="Base.Theme.KwizApp">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
