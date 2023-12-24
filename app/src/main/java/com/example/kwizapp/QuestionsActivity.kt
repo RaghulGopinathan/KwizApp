@@ -1,5 +1,6 @@
 package com.example.kwizapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
@@ -103,7 +104,9 @@ class QuestionsActivity : AppCompatActivity() {
         }
         else
         {
-            println("Result Activity called")
+            Intent(this@QuestionsActivity,ResultActivity::class.java).also{
+                startActivity(it)
+            }
         }
 
 
