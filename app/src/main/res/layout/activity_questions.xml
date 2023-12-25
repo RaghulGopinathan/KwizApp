@@ -22,7 +22,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:fontFamily="@font/altehaasgroteskregular"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="60dp"
             />
 
         <ImageView
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:text="Next"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             />
 
     </LinearLayout>
