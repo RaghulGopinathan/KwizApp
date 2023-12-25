@@ -17,6 +17,7 @@ class ResultActivity : AppCompatActivity() {
 
         var resultScore:TextView = findViewById(R.id.resultScore)
         var redo:Button = findViewById(R.id.redo)
+        var quit:Button = findViewById(R.id.quit)
 
         resultScore.text = "You have scored $displayScore marks"
 
@@ -25,7 +26,13 @@ class ResultActivity : AppCompatActivity() {
                 startActivity(it)
                 finish()
             }
+
         }
+
+        quit.setOnClickListener {
+           finish()
+        }
+
 
     }
 }
