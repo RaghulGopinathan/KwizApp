@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 
 class QuestionsActivity : AppCompatActivity() {
 
@@ -28,6 +29,9 @@ class QuestionsActivity : AppCompatActivity() {
     var previousQuestion = -1
 
 
+    var modeChosen = 0
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +44,10 @@ class QuestionsActivity : AppCompatActivity() {
         progress = findViewById(R.id.progressBar)
         progressText = findViewById(R.id.progressText)
         nextQuestion = findViewById(R.id.nextQuestion)
+
+        var modeIntent = intent
+        modeChosen = modeIntent.getIntExtra("Mode",0)
+        println("Main modechosen $modeChosen")
 
 
         setQuestion()
@@ -60,10 +68,17 @@ class QuestionsActivity : AppCompatActivity() {
 
 
         nextQuestion.setOnClickListener {
+
+            if(selectedOption!=0) {
                 previousQuestion++
                 counter++
                 setQuestion()
                 resetOptionStyle()
+            }
+            else
+            {
+
+            }
 
 
         }
@@ -76,15 +91,13 @@ class QuestionsActivity : AppCompatActivity() {
 
     fun setQuestion()
     {
-
-
-        var mlist:MutableList<QuestionRequirements> = questionClass.questionList()
-
+        var mlist:MutableList<QuestionRequirements> = questionClass.questionList(modeChosen)
 
         if(previousQuestion>=0)
         {
             var ans = mlist[previousQuestion].answers
             println("Question $previousQuestion answer is $ans")
+            previousQuestionAnswer(ans)
         }
 
         if(counter<mlist.size) {
@@ -104,8 +117,10 @@ class QuestionsActivity : AppCompatActivity() {
         }
         else
         {
-            Intent(this@QuestionsActivity,ResultActivity::class.java).also{
+            println("Score from else $score")
+            Intent(this@QuestionsActivity,ResultActivity::class.java).putExtra("Score",score).also{
                 startActivity(it)
+                finish()
             }
         }
 
@@ -124,9 +139,18 @@ class QuestionsActivity : AppCompatActivity() {
         option2.setBackgroundResource(R.drawable.options_border)
     }
 
-    fun previousQuestionAnswer()
+    fun previousQuestionAnswer(ans:Int)
     {
-
+        println("Selected option: $selectedOption")
+        if(ans==selectedOption)
+        {
+            score++
+        }
+        else
+        {
+            score=score
+        }
+        println("Score $score")
     }
 }
 
@@ -134,17 +158,47 @@ data class QuestionRequirements(var id:Int,var question:String,var image:Int,var
 
 object questionClass{
 
-    fun questionList():MutableList<QuestionRequirements>
+    fun questionList(modeChosen:Int):MutableList<QuestionRequirements>
     {
+        println("ModeChosen $modeChosen")
         var temp = mutableListOf<QuestionRequirements>()
-        var question1 = QuestionRequirements(1,"What is the name of this animal?",R.drawable.whale,"Whale","Crocodile",1)
-        temp.add(question1)
 
-        var question2 = QuestionRequirements(2,"What is the color of this bear?",R.drawable.bear,"Brown","White",1)
-        temp.add(question2)
 
-        var question3 = QuestionRequirements(3,"Is this animal a cat?",R.drawable.dog,"Yes","No",1)
-        temp.add(question3)
+        if(modeChosen==1)
+        {
+            var question1 = QuestionRequirements(1,"What is the name of this animal?",R.drawable.whale,"Whale","Crocodile",1)
+            temp.add(question1)
+
+            var question2 = QuestionRequirements(2,"What is the color of this bear?",R.drawable.bear,"Brown","White",2)
+            temp.add(question2)
+
+            var question3 = QuestionRequirements(3,"Is this animal a cat?",R.drawable.dog,"Yes","No",2)
+            temp.add(question3)
+        }
+        else if (modeChosen==2)
+        {
+            var question1 = QuestionRequirements(1,"How many colors are there in the rainbow?",R.drawable.rainbow,"Six","Seven",2)
+            temp.add(question1)
+
+            var question2 = QuestionRequirements(2,"What is the name of our planet?",R.drawable.earth,"Earth","Venus",1)
+            temp.add(question2)
+
+            var question3 = QuestionRequirements(3,"What country the flag belongs to??",R.drawable.india,"India","America",1)
+            temp.add(question3)
+        }
+        else if (modeChosen==3)
+        {
+            var question1 = QuestionRequirements(1,"What is the name of this world wonder?",R.drawable.eifiel,"Paris","Eiffel Tower",2)
+            temp.add(question1)
+
+            var question2 = QuestionRequirements(2,"What is the other name of this compound?",R.drawable.h2o,"Oxygen","Water",2)
+            temp.add(question2)
+
+            var question3 = QuestionRequirements(3,"Is this baseball or tennisball?",R.drawable.ball,"Tennis Ball","Baseball",2)
+            temp.add(question3)
+        }
+
+
         return temp
     }
 

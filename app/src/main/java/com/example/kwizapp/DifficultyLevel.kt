@@ -23,13 +23,14 @@ class DifficultyLevel : AppCompatActivity() {
         var intermediateCard:CardView = findViewById(R.id.intermediateCard)
         var hardCard:CardView = findViewById(R.id.hardCard)
 
-        difficultyDisplayName.text = "Hi ${intentName}!"
-
+        if(!intentName.isNullOrEmpty()) {
+            difficultyDisplayName.text = "Hi ${intentName}!"
+        }
 
         normalCard.setOnClickListener{
             Toast.makeText(this@DifficultyLevel,"Normal Mode",Toast.LENGTH_SHORT).show()
 
-            Intent(this@DifficultyLevel, QuestionsActivity::class.java).also{
+            Intent(this@DifficultyLevel, QuestionsActivity::class.java).putExtra("Mode",1).also{
                 startActivity(it)
                 finish()
 
@@ -38,7 +39,7 @@ class DifficultyLevel : AppCompatActivity() {
 
         intermediateCard.setOnClickListener{
             Toast.makeText(this@DifficultyLevel,"Intermediate Mode",Toast.LENGTH_SHORT).show()
-            Intent(this@DifficultyLevel,QuestionsActivity::class.java).also {
+            Intent(this@DifficultyLevel,QuestionsActivity::class.java).putExtra("Mode",2).also {
                 startActivity(it)
                 finish()
             }
@@ -46,7 +47,7 @@ class DifficultyLevel : AppCompatActivity() {
 
         hardCard.setOnClickListener{
             Toast.makeText(this@DifficultyLevel,"Hard Mode",Toast.LENGTH_SHORT).show()
-            Intent(this@DifficultyLevel,QuestionsActivity::class.java).also{
+            Intent(this@DifficultyLevel,QuestionsActivity::class.java).putExtra("Mode",3).also{
                 startActivity(it)
                 finish()
             }

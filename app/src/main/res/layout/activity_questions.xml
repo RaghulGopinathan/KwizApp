@@ -22,7 +22,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:fontFamily="@font/altehaasgroteskregular"
-            android:layout_marginTop="60sp"
+            android:layout_marginTop="0dp"
             />
 
         <ImageView
