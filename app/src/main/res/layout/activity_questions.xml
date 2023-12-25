@@ -22,6 +22,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:fontFamily="@font/altehaasgroteskregular"
+            android:textColor="@color/black"
             android:layout_marginTop="60dp"
             />
 
@@ -47,6 +48,8 @@
                 android:minHeight="30dp"
                 android:minWidth="200dp"
                 android:progress="1"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
                 />
             <TextView
                 android:id="@+id/progressText"
@@ -54,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:text="0/10"
                 android:layout_marginLeft="10dp"
-                android:textSize="12dp"/>
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
         </LinearLayout>
 
 
@@ -71,6 +75,7 @@
             android:textSize="20sp"
             android:padding="7dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:background="@drawable/options_border"
             />
 
@@ -85,6 +90,7 @@
             android:fontFamily="@font/altehaasgroteskregular"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:padding="7dp"
             android:background="@drawable/options_border"
             />
@@ -96,6 +102,8 @@
             android:text="Next"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
+            android:backgroundTint="#880ED4"
+            android:textColor="@color/white"
             />
 
     </LinearLayout>

@@ -74,6 +74,7 @@ class QuestionsActivity : AppCompatActivity() {
                 counter++
                 setQuestion()
                 resetOptionStyle()
+
             }
             else
             {
@@ -150,6 +151,7 @@ class QuestionsActivity : AppCompatActivity() {
         {
             score=score
         }
+        selectedOption = 0
         println("Score $score")
     }
 }

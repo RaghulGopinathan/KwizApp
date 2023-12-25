@@ -101,7 +101,7 @@
             android:text="Normal"
             android:textStyle="bold"
             android:textSize="15dp"
-            android:layout_marginLeft="39dp"
+            android:layout_marginLeft="38dp"
             />
         <TextView
             android:layout_width="wrap_content"

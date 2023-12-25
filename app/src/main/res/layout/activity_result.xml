@@ -41,6 +41,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
             android:textSize="15dp"
+            android:textColor="@color/white"
             android:backgroundTint="@color/black"/>
         <Button
             android:id="@+id/quit"
@@ -49,6 +50,7 @@
             android:text="Quit"
             android:layout_gravity="center"
             android:textSize="15dp"
+            android:textColor="@color/white"
             android:backgroundTint="@color/black"/>
     </LinearLayout>
 

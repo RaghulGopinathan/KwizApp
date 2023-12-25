@@ -70,7 +70,9 @@
             android:layout_height="wrap_content"
             android:text="Start"
             android:layout_marginTop="60dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:backgroundTint="#880ED4"/>
     </androidx.cardview.widget.CardView>
 
 
