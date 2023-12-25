@@ -1,5 +1,5 @@
 # KwizApp
-**This is my first application project which is an basic kids quiz app**
+**This is my first application project which is an basic kids quiz app** developed using Kotlin programming language
 
 The app opens with an elegant gradient main acitivity which asks for the user to enter his/her name.
 
