@@ -17,5 +17,6 @@ Once done the user gets to see the amount of marks he scored.
 
 ![image](https://github.com/RaghulGopinathan/KwizApp/assets/58162004/02967160-63c0-4ac4-b4af-489d68ba0e74)
 
+Note: The apk file will be available under "**Build APK**" folder to download. Cheers!
 
 
